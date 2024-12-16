@@ -6,13 +6,12 @@ import mysql from "mysql2/promise";
 
 const client = mysql.createPool({
   host: DB_HOST,
-  port: Number.parseInt(DB_PORT as string),
+  port: DB_PORT as number | undefined,
   user: DB_USER,
   password: DB_PASSWORD,
   database: DB_NAME,
 });
 
-// Ready to export
 export default client;
 
 // Types export
